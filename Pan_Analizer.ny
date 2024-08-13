@@ -22,7 +22,6 @@
          (pan-center (if (> total-median 0)
                          (/ (- right-median left-median) total-median)
                          0)))
-    (format t "Pan center: ~a%%~%" (round (* pan-center 100)))
     (round (* pan-center 100))))
 
 (find-pan-center *track*)

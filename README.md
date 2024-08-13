@@ -5,7 +5,7 @@ Often using Audacity for different purposes I thought it might be useful at leas
 # Operation 
 This plugin calculates an incremental median of the pan values of the two independent audio channels, then making a total median of the two channels.. 
 # Installation
-Go to this link: https://manual.audacityteam.org/man/nyquist_plug_in_installer.html
+Download the file "Pan_Analizer" and go to this link: https://manual.audacityteam.org/man/nyquist_plug_in_installer.html
 # Known issues 
 Unfortunately the incremental median is not perfect in all cases, sometimes giving unexpected results when for example there are many variations within the selection. It is also known the visible problem of performance, although it seems to crash wait and after a while will normally give the output.
 # To use the plugin at its best

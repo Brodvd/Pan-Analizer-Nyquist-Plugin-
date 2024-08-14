@@ -1,3 +1,8 @@
+;nyquist plug-in
+;version 4
+;type analyze
+;name "Pan Analizer"
+
 (defun calculate-median-incremental (sound)
   (let ((values '())
         (value (snd-fetch sound)))

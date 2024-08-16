@@ -2,6 +2,7 @@
 ;version 4
 ;type analyze
 ;name "Pan Analizer"
+;copyright "Released under terms of the GNU General Public License version 2 or later"
 
 (defun calculate-median-incremental (sound)
   (let ((values '())

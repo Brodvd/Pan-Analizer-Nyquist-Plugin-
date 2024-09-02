@@ -10,6 +10,7 @@ Download the file "Pan_Analizer" and go to this link: https://manual.audacitytea
 Unfortunately the incremental median is not perfect in all cases, sometimes giving unexpected results when for example there are many variations within the selection. It is also known the visible problem of performance, although it seems to crash wait and after a while will normally give the output.
 # To use the plugin at its best
 I guarantee the output quality with a medium-high success rate, especially works well with short selections with constant audio prevalent. Below I show an example of the output and view of the stereo plan plugin (in Sonic Visualizer) of the same audio track:
+
 ![analizer pan 1](https://github.com/user-attachments/assets/cfdc383d-bed2-4113-b148-fc230472dd09)
 
 The same track with the Stereo Plan of the Vamp Plugins:

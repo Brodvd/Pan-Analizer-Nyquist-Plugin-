@@ -1,3 +1,9 @@
+;nyquist plug-in
+;version 4
+;type analyze
+;name "Pan Analizer"
+;copyright "Released under terms of the GNU General Public License version 2 or later"
+
 (defun calculate-weighted-mean (sound)
   (let ((sum 0)
         (weight-sum 0)

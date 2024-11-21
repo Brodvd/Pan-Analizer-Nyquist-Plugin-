@@ -28,7 +28,7 @@
                          (/ (- right-weighted-mean left-weighted-mean) total-weighted-mean)
                          0)))
     (let ((pan-value (round (* pan-center 100))))
-      (print (format nil "Il valore Pan calcolato è: ~a" pan-value))
-      pan-value)))
+      (print (format nil "Il valore Pan calcolato è: ~a" (- pan-value)))
+      (- pan-value))))
 
 (find-pan-center *track*)

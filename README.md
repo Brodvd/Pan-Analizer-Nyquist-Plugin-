@@ -1,11 +1,16 @@
 # Pan-Analizer-Nyquist-Plugin-
 This is a nyquist analyzer that tries to locate the center of the overview of a track.
+
 # Why this plugin?
 Often using Audacity for different purposes I thought it might be useful at least in remixes to have a quick overview detector of a musical instrument, since to get information about the overview I always used the Stereo Plan of the vamp plugins in Sonic Visualizer.. 
-# Operation 
-This plugin calculates an incremental median of the pan values of the two independent audio channels, then making a total median of the two channels.. 
+
+# Methods
+* `Pan_Analizer.ny` calculates an incremental median of the pan values of the two independent audio channels, then making a total median of the two channels.
+* `Pan_Analizer_1.1.0.ny` calculates a weighted average of the pan of the strereo track.
+
 # Installation
 Download the file  `Pan_Analizer.ny`  and go to this [link](https://manual.audacityteam.org/man/nyquist_plug_in_installer.html) about the nyquist plugins installing.
+
 # To use the plugin at its best
 I guarantee the output quality with a medium-high success rate, especially works well with short selections with constant audio prevalent. Below I show an example of the output and view of the stereo plan plugin (in Sonic Visualizer) of the same audio track:
 

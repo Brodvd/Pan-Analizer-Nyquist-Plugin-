@@ -6,7 +6,7 @@ Often using Audacity for different purposes I thought it might be useful at leas
 
 # Methods
 * `Pan_Analizer.ny` calculates an incremental median of the pan values of the two independent audio channels, then making a total median of the two channels.
-* `Pan_Analizer_1.1.0.ny` calculates a weighted average of the pan of the strereo track.
+* `Pan_Analizer_1.1.0.ny` calculates a weighted average of the pan of the strereo track (best).
 
 # Installation
 Download the file  `Pan_Analizer.ny`  and go to this [link](https://manual.audacityteam.org/man/nyquist_plug_in_installer.html) about the nyquist plugins installing.

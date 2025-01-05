@@ -9,7 +9,7 @@ Often using Audacity for different purposes I thought it might be useful at leas
 * `Pan_Analizer_1.1.0.ny` calculates a weighted average of the pan of the strereo track (best).
 
 # Installation
-Download the file  `Pan_Analizer.ny`  and go to this [link](https://manual.audacityteam.org/man/nyquist_plug_in_installer.html) about the nyquist plugins installing.
+Download the files `.ny`  and go to this [link](https://manual.audacityteam.org/man/nyquist_plug_in_installer.html) about the nyquist plugins installing.
 
 # To use the plugin at its best
 I guarantee the output quality with a medium-high success rate, especially works well with short selections with constant audio prevalent. Below I show an example of the output and view of the stereo plan plugin (in Sonic Visualizer) of the same audio track:

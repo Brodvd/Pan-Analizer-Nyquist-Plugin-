@@ -4,8 +4,8 @@
 ;name "Pan Analizer"
 ;copyright "Released under terms of the GNU General Public License version 2 or later"
 
-;control Min "N. Note" int "(Min)" -95 -100 0
-;control Max "N. Note" int "(Max)" 95 0 100
+;control Min "Cutoff filter" int "(Min)" -95 -100 0
+;control Max "Cutoff filter" int "(Max)" 95 0 100
 
 (defun calculate-weighted-mean (sound)
   (let ((sum 0)

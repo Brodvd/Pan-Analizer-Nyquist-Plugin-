@@ -4,15 +4,19 @@
 ;name "Pan Analizer"
 ;copyright "Released under terms of the GNU General Public License version 2 or later"
 
+;control Min "N. Note" int "(Min)" -95 -100 0
+;control Max "N. Note" int "(Max)" 95 0 100
+
 (defun calculate-weighted-mean (sound)
   (let ((sum 0)
         (weight-sum 0)
         (weight 1)
         (value (snd-fetch sound)))
     (while value
-      (setq sum (+ sum (* value weight)))
-      (setq weight-sum (+ weight-sum weight))
-      (setq weight (1+ weight))
+      (when (and (>= value Min) (<= value Max))
+        (setq sum (+ sum (* value weight)))
+        (setq weight-sum (+ weight-sum weight))
+        (setq weight (1+ weight)))
       (setq value (snd-fetch sound)))
     (if (> weight-sum 0)
         (/ sum weight-sum)

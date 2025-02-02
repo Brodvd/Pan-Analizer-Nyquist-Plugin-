@@ -1,14 +1,33 @@
-(defun clip-values (values min max)
-  (mapcar (lambda (x) (max min (min x max))) values))
+;nyquist plug-in
+;version 4
+;type analyze
+;name "Pan Analizer"
+;copyright "Released under terms of the GNU General Public License version 2 or later"
 
-(defun truncated-mean (values percentage)
-  (let* ((sorted-values (sort values #'<))
-         (n (length values))
-         (k (round (* n percentage))))
-    (mean (subseq sorted-values k (- n k)))))
+(defun calculate-weighted-mean (sound min max)
+  (let ((sum 0)
+        (weight-sum 0)
+        (weight 1)
+        (value (snd-fetch sound)))
+    (while value
+        (setq sum (+ sum (* value weight)))
+        (setq weight-sum (+ weight-sum weight))
+        (setq weight (1+ weight)))
+      (setq value (snd-fetch sound)))
+    (if (> weight-sum 0)
+        (/ sum weight-sum)
+        0)))
 
-;; Esempio di utilizzo
-(setq pan-values '(-100 -50 -30 -20 -10 0 10 20 30 50 100))
-(setq percentage 0.05) ;; Escludi il 5% dei valori più bassi e più alti
-(setq clipped-values (clip-values pan-values -90 90))
-(truncated-mean clipped-values percentage)
+(defun find-pan-center (track min max)
+  (let* ((left (snd-copy (aref track 0)))
+         (right (snd-copy (aref track 1)))
+         (left-weighted-mean (calculate-weighted-mean left min max))
+         (right-weighted-mean (calculate-weighted-mean right min max))
+         (total-weighted-mean (+ (abs left-weighted-mean) (abs right-weighted-mean)))
+         (pan-center (if (> total-weighted-mean 0)
+                         (/ (- right-weighted-mean left-weighted-mean) total-weighted-mean)
+                         0)))
+    (let ((pan-value (round (* pan-center 100))))
+      (- pan-value))))
+
+(find-pan-center *track*)

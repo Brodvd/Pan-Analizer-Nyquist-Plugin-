@@ -10,9 +10,9 @@
         (weight 1)
         (value (snd-fetch sound)))
     (while value
-        (setq sum (+ sum (* value weight)))
-        (setq weight-sum (+ weight-sum weight))
-        (setq weight (1+ weight)))
+      (setq sum (+ sum (* value weight)))
+      (setq weight-sum (+ weight-sum weight))
+      (setq weight (1+ weight))
       (setq value (snd-fetch sound)))
     (if (> weight-sum 0)
         (/ sum weight-sum)

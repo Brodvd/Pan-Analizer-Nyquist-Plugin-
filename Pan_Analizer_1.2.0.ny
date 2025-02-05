@@ -1,0 +1,25 @@
+(defun calculate-geometric-mean (sound)
+  (let ((product 1.0)
+        (count 0)
+        (value (snd-fetch sound)))
+    (while value
+      (setq product (* product (max value 1e-10))) ; Evita zero o valori negativi
+      (setq count (1+ count))
+      (setq value (snd-fetch sound)))
+    (if (> count 0)
+        (exp (/ (log product) count))
+        0)))
+
+(defun find-pan-center (track)
+  (let* ((left (snd-copy (aref track 0)))
+         (right (snd-copy (aref track 1)))
+         (left-geometric-mean (calculate-geometric-mean left))
+         (right-geometric-mean (calculate-geometric-mean right))
+         (total-geometric-mean (+ (abs left-geometric-mean) (abs right-geometric-mean)))
+         (pan-center (if (> total-geometric-mean 0)
+                         (/ (- right-geometric-mean left-geometric-mean) total-geometric-mean)
+                         0)))
+    (let ((pan-value (round (* pan-center 100))))
+      (- pan-value))))
+
+(find-pan-center *track*)
